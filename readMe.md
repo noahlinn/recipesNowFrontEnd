@@ -48,5 +48,6 @@
 
 ## Stretch
     -Add allergy param on sign up and use during searches  
+    -Add encription
     -Be able to change diet & allergy in profile
     -Make something that doesn't look like shit for once

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<section class = "login-or-signup">
+    <button id = "login-button">Login</button>
+    <button id = "signup-button">Sign Up</button>
+</section>
+<section class = "signup hidden">
+    <h2>Sign Up</h2>
+    <form class="signup-form">
+        <label for="signup-name">Name</label>
+        <input type="text" id="signup-name" required>
+
+        <label for="signup-email">Email</label>
+        <input type="text" id="signup-email" required>
+
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" required>
+
+        <label for="diet">Specify Diet</label>
+        <select id="diet" name="diet">
+            <option value = "N/A">None</option>
+            <option value = "Vegetarian">Vegetarian</option>
+            <option value = "Vegan">Vegan</option>
+            <option value = "Ketogenic">Keto</option>
+            <option value = "Pescetarian">Pescetarian</option>
+            <option value = "Paleo">Paleo</option>
+            <option value = "Whole30">Whole30</option>
+        </select>
+        <input type="submit" value="Sign Up!">
+</section>
+<section class = "login hidden">
+    <form class="login-form">
+        <label for="login-email">Email</label>
+        <input type="text" id="login-email">
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password">
+
+        <input type="submit" value="Log In!">
+</section>
+<section class = "search-page hidden">
+
+</section>
+    <script src="main.js" async defer></script>
+</body>
+
+</html>
