@@ -13,7 +13,7 @@
 ![Search](./wireFrames/search.png)
 ![Results](./wireFrames/results.png)
 ![Recipe](./wireFrames/recipe.png)
-![Profile](./wireFrames/profile.png)
+![Profile](./wireFrames/Profile.png)
 ![ERD](./wireFrames/ERD_Project2.png)
 ## Routes
 
