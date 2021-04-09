@@ -14,6 +14,16 @@
 ![Results](./wireFrames/results.png)
 ![Recipe](./wireFrames/recipe.png)
 ![Profile](./wireFrames/profile.png)
+![ERD](./wireFrames/ERD_Project2.png)
+## Routes
+
+    -POST /users (create user)
+    -POST /users/login (user login)
+    -POST /users/:userId/save/:recipeId (user saves recipe)
+    -GET /users/:userId/getSavedRecipes (display user's saved recipes)
+    -DELETE /users/:userId/delete/:recipeId (user delete saved recipe)
+    -POST /recipe (display recipe search results)
+    -GET /recipe/:recipeId (display one recipe)
 
 ## User Stories
     -On load display sign up and login buttons
