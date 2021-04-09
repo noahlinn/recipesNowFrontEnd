@@ -12,47 +12,48 @@
 </head>
 
 <body>
-<section class = "login-or-signup">
-    <button id = "login-button">Login</button>
-    <button id = "signup-button">Sign Up</button>
-</section>
-<section class = "signup hidden">
-    <h2>Sign Up</h2>
-    <form class="signup-form">
-        <label for="signup-name">Name</label>
-        <input type="text" id="signup-name" required>
+    <section class="login-or-signup">
+        <button id="login-button">Login</button>
+        <button id="signup-button">Sign Up</button>
+    </section>
+    <section class="signup hidden">
+        <h2>Sign Up</h2>
+        <form class="signup-form">
+            <label for="signup-name">Name</label>
+            <input type="text" id="signup-name" required>
 
-        <label for="signup-email">Email</label>
-        <input type="text" id="signup-email" required>
+            <label for="signup-email">Email</label>
+            <input type="text" id="signup-email" required>
 
-        <label for="signup-password">Password</label>
-        <input type="password" id="signup-password" required>
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required>
 
-        <label for="diet">Specify Diet</label>
-        <select id="diet" name="diet">
-            <option value = "N/A">None</option>
-            <option value = "Vegetarian">Vegetarian</option>
-            <option value = "Vegan">Vegan</option>
-            <option value = "Ketogenic">Keto</option>
-            <option value = "Pescetarian">Pescetarian</option>
-            <option value = "Paleo">Paleo</option>
-            <option value = "Whole30">Whole30</option>
-        </select>
-        <input type="submit" value="Sign Up!">
-</section>
-<section class = "login hidden">
-    <form class="login-form">
-        <label for="login-email">Email</label>
-        <input type="text" id="login-email">
+            <label for="diet">Specify Diet</label>
+            <select id="diet" name="diet">
+                <option value="">Omnivore</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Ketogenic">Keto</option>
+                <option value="Pescetarian">Pescetarian</option>
+                <option value="Paleo">Paleo</option>
+                <option value="Whole30">Whole30</option>
+            </select>
+            <input type="submit" value="Sign Up!"></form>
+    </section>
+    <section class="login hidden">
+        <form class="login-form">
+            <label for="login-email">Email</label>
+            <input type="text" id="login-email">
 
-        <label for="login-password">Password</label>
-        <input type="password" id="login-password">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password">
 
-        <input type="submit" value="Log In!">
-</section>
-<section class = "search-page hidden">
+            <input type="submit" value="Log In!"></form>
+    </section>
+    <section class="search-page hidden">
 
-</section>
+    </section>
+    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js "></script>
     <script src="main.js" async defer></script>
 </body>
 
