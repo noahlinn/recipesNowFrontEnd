@@ -18,8 +18,14 @@
 ## User Stories
     
 ## MVP
-
-
- 
+    -Login & Signup
+    -User Authorization
+    -Be able to search for recipes that align with their diet
+    -Save recipes
+    -Saved recipes show on their profile
+    -Log out 
 
 ## Stretch
+    -Add allergy param on sign up and use during searches  
+    -Be able to change diet & allergy in profile
+    -Make something that does look like shit for once
