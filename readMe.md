@@ -16,6 +16,17 @@
 ![Profile](./wireFrames/profile.png)
 
 ## User Stories
+    -On load display sign up and login buttons
+    -Click login and a form appears to put in email and password
+    -Click signup and a form appears to put in name, email, password, and diet drop down
+    -If login or sign up is successful, page displays a search bar and profile link at the top corner of the page
+    -Use the search bar to search for recipes (i.e. Tacos, Salad, Sandwich, etc...)
+    -After search, display results with picture, if no results, display no results found
+    -Clicking on picture of recipe displays the ingredients and steps and a save button and back to results button
+    -Click save button and the recipe is saved to the profile page
+    -Click back to results and the results are shown 
+    -Click profile link and the user's saved recipes are displayed with a delete button to remove the saved recipe
+    
     
 ## MVP
     -Login & Signup
