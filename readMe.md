@@ -8,9 +8,12 @@
 
 ## Wireframes
 ![Load](./wireFrames/loadPage.png)
-
-## Wireframes 
-
+![Login](./wireFrames/login.png)
+![Signup](./wireFrames/signup.png)
+![Search](./wireFrames/search.png)
+![Results](./wireFrames/results.png)
+![Recipe](./wireFrames/recipe.png)
+![Profile](./wireFrames/profile.png)
 
 ## User Stories
     
