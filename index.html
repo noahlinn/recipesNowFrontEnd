@@ -38,7 +38,8 @@
                 <option value="Paleo">Paleo</option>
                 <option value="Whole30">Whole30</option>
             </select>
-            <input type="submit" value="Sign Up!"></form>
+            <input type="submit" value="Sign Up!">
+        </form>
     </section>
     <section class="login hidden">
         <form class="login-form">
@@ -48,10 +49,22 @@
             <label for="login-password">Password</label>
             <input type="password" id="login-password">
 
-            <input type="submit" value="Log In!"></form>
+            <input type="submit" value="Log In!">
+        </form>
     </section>
     <section class="search-page hidden">
-
+        <button class = 'log-out' id = 'log-out-search'>Log out</button>
+        <button class = 'profile'>Profile</button>
+        <form class="search-form">
+            <label for="search-recipes">Search Recipes</label>
+            <input type="text" id="search-recipes">
+            <input type="submit" value="Search!">
+        </form>
+        <div class = "search-results">
+        </div>
+    </section>
+    <section class="recipe-details hidden">
+        
     </section>
     <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js "></script>
     <script src="main.js" async defer></script>
