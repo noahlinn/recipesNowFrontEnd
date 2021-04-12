@@ -4,7 +4,7 @@ const app = express()
 const routesReport = require('rowdy-logger').begin(app)
 const replaceInFile = require('replace-in-file')
 const path = require('path')
-const { replaceInFile } = require('replace-in-file')
+
 
 app.get('/', (req, res) => {
   const filepath = path.join(__dirname, 'index.html')
