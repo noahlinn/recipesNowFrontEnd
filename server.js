@@ -16,7 +16,7 @@ app.get('/main.js', (req, res) => {
 
   if (process.env.NODE_ENV === 'production'){
       await replaceInFile({
-          files:filepath,
+          files: filepath,
           from: 'http://localhost:3001',
           to: 'https://recipesnow-backend.herokuapp.com/'
       })
