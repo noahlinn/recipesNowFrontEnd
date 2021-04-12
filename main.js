@@ -29,11 +29,13 @@ signUpButton.addEventListener('click', () => {
     console.log('click')
     hideSections()
     removeHidden(signUpPage)
+    addHidden(loginOrSignUp)
 })
 
 loginButton.addEventListener('click', () => {
     hideSections()
     removeHidden(loginPage)
+    addHidden(loginOrSignUp)
 })
 
 for (const button of logOutButtons) {
