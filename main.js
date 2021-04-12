@@ -1,5 +1,3 @@
-const { async } = require("regenerator-runtime")
-
 const loginOrSignUp = document.querySelector(".login-or-signup")
 const signUpButton = document.querySelector("#signup-button")
 const loginButton = document.querySelector("#login-button")
@@ -74,8 +72,8 @@ searchForm.addEventListener('submit', (e) => {
 })
 
 backToResusltsButton.addEventListener('click', () => {
-    if(profile){backHandler(profilePage)}
-    else{backHandler(searchPage)}    
+    if (profile) { backHandler(profilePage) }
+    else { backHandler(searchPage) }
 })
 
 let backHandler = (show) => {
@@ -86,7 +84,6 @@ let backHandler = (show) => {
 profileButton.addEventListener('click', () => {
     hideSections()
     removeHidden(profilePage)
-    console.log('click')
     showSavedRecipe()
     profile = true
     console.log(profile)
@@ -98,6 +95,16 @@ backToSearchButton.addEventListener('click', () => {
     hideSections()
     removeHidden(searchPage)
 })
+
+deleteSave.addEventListener('click', () => {
+    deleteSavedRecipe(recipeId)
+    if(profile){
+        hideSections()
+        removeHidden(profilePage)
+    }
+})
+
+
 
 getRecipes = async (id, query) => {
     try {
@@ -139,6 +146,7 @@ displayRecipes = (id, name, img, div, page, page2) => {
         displaySingle(id, page)
         clearResults(page2)
     })
+
 }
 
 displaySingle = async (recipeId, page) => {
@@ -243,39 +251,42 @@ showSavedRecipe = async () => {
     try {
         clearResults(savedResults)
         const userId = localStorage.getItem('userId')
+        
         let res = await axios.get(`http://localhost:3001/users/${userId}/savedRecipes`)
         let dataArr = res.data
-        console.log(dataArr.recipeId)
-        let newArr = []
-        for(let data of dataArr){
-            newArr.push(data.recipeId)
+        
+        for (let data of dataArr) {
             recipeId = data.recipeId
             console.log(recipeId)
             let results = await axios.get(`http://localhost:3001/recipes/search/${recipeId}`)
             displayRecipes(recipeId, results.data.title, results.data.image, savedResults, profilePage, resultCard)
-        }      
-
+        }  
     } catch (error) {
         
     }
 }
 
-deleteSave = async () = {
-    
+deleteSavedRecipe = async (recipeId) => {
+    let userId = localStorage.getItem('userId')
+    try {
+        let results = await axios.delete(`http://localhost:3001/users/${userId}/delete/${recipeId}`)
+        showSavedRecipe()
+    } catch (error) {
+        
+    }
 }
 
+
+
 checkIfSaved = async (id) => {
-    let saveArr = []
     let userId = localStorage.getItem('userId')
     let res = await axios.get(`http://localhost:3001/users/${userId}/savedRecipes`)
-    for(let each of res.data){
-        saveArr.push(each.recipeId)
-    }
-    if (saveArr.includes(id.toString())){
+    const saveArr = res.data.map(recipe => recipe.recipeId)
+    if (saveArr.includes(id.toString())) {
         removeHidden(deleteSave)
         addHidden(saveButton)
     }
-    else{
+    else {
         addHidden(deleteSave)
         removeHidden(saveButton)
     }
