@@ -188,7 +188,7 @@ createRecipeElements = (results) => {
     }
     ingredientContainer.append(ingredientHeader, ingredientList)
     instructionContainer.append(instructionHeader, recipeInstructions)
-    resultCard.append(moreButtons, recipeHeader, recipeImg , ingredientContainer, instructionContainer
+    resultCard.append( recipeHeader, recipeImg , ingredientContainer, instructionContainer
          )
 }
 

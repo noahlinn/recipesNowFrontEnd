@@ -1,6 +1,4 @@
-.hidden{
-    display: none;
-}
+
 
 body{
     background: url("https://www.prolinerangehoods.com/blog/wp-content/uploads/2020/03/chopping-boards-near-oven-under-hood-2062426-1170x605.jpg")no-repeat center center fixed; 
@@ -168,9 +166,9 @@ section{
     flex-wrap: wrap;
 }
 .result-card img{
-    margin-top: -5%;
+    
     margin-left: 5%;
-    width: 45%;
+    width: 40%;
     align-self:flex-start;
 }
 
@@ -179,22 +177,29 @@ section{
     height: 50px;
 }
 
-.more-buttons{
-    bottom: 0%;
-    height:5%
-}
+
 
 .ingredient-container{
-    margin-top: -5%;
+
     margin-left: 5%;
     width: 45%;
     height: fit-content;
 }
 
 .instruction-container{
-    margin-top: -5%;
+   
     margin-left: 5%;
     margin-right: 5%;
     width: 90%
 }
-.recipe-details{}
+.recipe-details{
+    display: block;
+}
+.more-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.hidden{
+    display: none;
+}
