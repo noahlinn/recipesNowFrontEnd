@@ -8,20 +8,125 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 100%;
+}
+html{
+    width: 100%;
+    height: 100%
+}
+.login-or-signup{
+    
+    flex-direction: column;
+
+}
+.search-page{
+    flex-direction: column;
+}
+.signup{
+    flex-direction: column;
 }
 
-.login-or-signup{
-    margin-top: 10%;
-    margin-bottom: 10%;
-    width: 80%;
-    background:rgba(0, 0, 0, 0.214);
-    height: 350%
+.search-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.search-page-buttons{
+    align-content: space-between;
+}
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-header{
+    margin-top: 250px;
+    text-align: center;
+    font-size: 200%;
+}
+
+.login{
+    flex-direction: column;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-header{
+    margin-top: 250px;
+    text-align: center;
+    font-size: 200%;
+}
+
+
+section{
+    margin: 10% 10% 10% 10%;
+    background:rgba(0, 0, 0, 0.331);
+    height: 80%;
+    width: 80%;
+    display: flex;
 }
 
 #page1-header{
+    font-weight: ;
     text-align: center;
     margin-top: 200px;
-    font-size: 400%;
-  
+    font-size: 600%;
+}
+#page1-sub{
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 200%;
+    margin-top: -100px;
+    text-align: center;
+}
+
+.log-sign-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.log-sign-but{
+    width: 300px;   
+    height: 50px;
+    margin: 10px;
+}
+.recipe-card img{
+    width: 350px;
+}
+
+.search-results{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recipe-card{
+    font-size: 20px;
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 15px 20px 15px;
+    padding: 5px;
+    border: 2px solid white;
+    box-sizing: border-box;
+    width: 18%;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.767); 
+}
+
+.recipe-card p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; 
+    overflow: hidden;
 }

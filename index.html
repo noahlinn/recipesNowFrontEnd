@@ -13,14 +13,18 @@
 
 <body>
     <section class="login-or-signup">
-        <p id = "page1-header">RecipesNOW</p>
-        <p id = "page1-sub">Recipes tailored to you<p>
-        <button id="login-button">Login</button>
-        <button id="signup-button">Sign Up</button>
+        <p id="page1-header">RecipesNOW</p>
+        <p id="page1-sub">Recipes tailored to you
+        <p>
+        <div class="log-sign-div">
+            <button id="login-button" class="log-sign-but">Login</button>
+            <button id="signup-button" class="log-sign-but">Sign Up</button>
+        </div>
     </section>
     <section class="signup hidden">
-        <h2>Sign Up</h2>
+        
         <form class="signup-form">
+            <h2 class="signup-header">Sign Up</h2>
             <label for="signup-name">Name</label>
             <input type="text" id="signup-name" required>
 
@@ -45,6 +49,7 @@
     </section>
     <section class="login hidden">
         <form class="login-form">
+            <h2 class="login-header">Login</h2>
             <label for="login-email">Email</label>
             <input type="text" id="login-email">
 
@@ -55,8 +60,10 @@
         </form>
     </section>
     <section class="search-page hidden">
+        <div class="search-page-buttons">
         <button class='log-out' id='log-out-search'>Log out</button>
         <button class='profile-button'>Profile</button>
+    </div>
         <form class="search-form">
             <label for="search-recipes">Search Recipes</label>
             <input type="text" id="search-recipes">
