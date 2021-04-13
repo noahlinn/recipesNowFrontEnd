@@ -11,7 +11,7 @@ const loginForm = document.querySelector('.login-form')
 const searchForm = document.querySelector('.search-form')
 const searchResults = document.querySelector('.search-results')
 const recipeDeatilsPage = document.querySelector('.recipe-details')
-
+const profileHeader = document.querySelector('#profile-header')
 
 const resultCard = document.querySelector('.result-card')
 const profileButton = document.querySelector('.profile-button')
@@ -24,6 +24,7 @@ const saveButton = document.querySelector('#save-recipe')
 const moreButtons = document.querySelector('.more-buttons')
 let recipeId = null
 let profile = false
+
 
 
 
@@ -67,6 +68,15 @@ saveButton.addEventListener('click', () => {
     saveRecipe(userId, recipeId)
 })
 
+profileButton.addEventListener('click', () => {
+    hideSections()
+    removeHidden(profilePage)
+    showSavedRecipe()
+    profile = true
+    clearResults(searchResults)
+    showProfileName()
+})
+
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const query = document.querySelector('#search-recipes').value
@@ -85,14 +95,7 @@ let backHandler = (show) => {
     removeHidden(show)
 }
 
-profileButton.addEventListener('click', () => {
-    hideSections()
-    removeHidden(profilePage)
-    showSavedRecipe()
-    profile = true
-    console.log(profile)
-    clearResults(searchResults)
-})
+
 
 backToSearchButton.addEventListener('click', () => {
     profile = false
@@ -225,6 +228,8 @@ signUp = async () => {
         })
         let userId = res.data.user.id
         localStorage.setItem('userId', userId)
+        let userName = res.data.user.name
+        localStorage.setItem('userName', userName)
         hideSections()
         removeHidden(searchPage)
     } catch (error) {
@@ -241,6 +246,8 @@ login = async () => {
             password: password
         })
         let userId = res.data.user.id
+        let userName = res.data.user.name
+        localStorage.setItem('userName', userName)
         localStorage.setItem('userId', userId)
         hideSections()
         removeHidden(searchPage)
@@ -258,13 +265,15 @@ saveRecipe = async (userId, recipeId) => {
 }
 
 showSavedRecipe = async () => {
+    
     try {
         clearResults(savedResults)
         const userId = localStorage.getItem('userId')
         
         let res = await axios.get(`http://localhost:3001/users/${userId}/savedRecipes`)
         let dataArr = res.data
-        
+        console.log(res.data)
+       
         for (let data of dataArr) {
             recipeId = data.recipeId
             console.log(recipeId)
@@ -300,6 +309,11 @@ checkIfSaved = async (id) => {
         addHidden(deleteSave)
         removeHidden(saveButton)
     }
+}
+
+showProfileName = () => {
+    const userName = localStorage.getItem('userName')
+    profileHeader.innerHTML = `Hello, ${userName}`
 }
 
 if (localStorage.getItem('userId')) {
