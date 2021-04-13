@@ -10,7 +10,10 @@ body{
     height: 99%;
     width: 99%;
 }
-
+button{
+    width: 100px;
+    height: 40px
+}
 .login-or-signup{
     
     flex-direction: column;
@@ -198,6 +201,17 @@ section{
     flex-direction: row;
     justify-content: space-between;
 }
+
+.profile-page label{
+    font-size: 75px;
+    width: 100%;
+    
+    text-align: center;
+}
+.profile-page p{
+    text-align: center;
+}
+
 .hidden{
     display: none;
 }
