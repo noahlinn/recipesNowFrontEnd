@@ -11,15 +11,17 @@ const loginForm = document.querySelector('.login-form')
 const searchForm = document.querySelector('.search-form')
 const searchResults = document.querySelector('.search-results')
 const recipeDeatilsPage = document.querySelector('.recipe-details')
-const saveButton = document.querySelector('#save-recipe')
-const backToResusltsButton = document.querySelector('#back-to-results')
+
+
 const resultCard = document.querySelector('.result-card')
 const profileButton = document.querySelector('.profile-button')
 const profilePage = document.querySelector('.profile-page')
 const backToSearchButton = document.querySelector('.back-to-search')
 const savedResults = document.querySelector('.saved-results')
 const deleteSave = document.querySelector('#delete-recipe')
-
+const backToResusltsButton = document.querySelector('#back-to-results')
+const saveButton = document.querySelector('#save-recipe')
+const moreButtons = document.querySelector('.more-buttons')
 let recipeId = null
 let profile = false
 
@@ -167,6 +169,10 @@ createRecipeElements = (results) => {
     let recipeImg = document.createElement('img')
     recipeImg.src = results.data.image
     let instructionHeader = document.createElement('h3')
+    let ingredientContainer = document.createElement('div')
+    ingredientContainer.classList.add('ingredient-container')
+    let instructionContainer = document.createElement('div')
+    instructionContainer.classList.add('instruction-container')
     instructionHeader.innerHTML = 'Instructions:'
     let ingredientHeader = document.createElement('h3')
     ingredientHeader.innerHTML = 'Ingredients:'
@@ -180,8 +186,10 @@ createRecipeElements = (results) => {
         eachIngredient.innerHTML = ingredient.original
         ingredientList.append(eachIngredient)
     }
-    resultCard.append(recipeHeader, recipeImg, instructionHeader,
-        recipeInstructions, ingredientHeader, ingredientList)
+    ingredientContainer.append(ingredientHeader, ingredientList)
+    instructionContainer.append(instructionHeader, recipeInstructions)
+    resultCard.append(moreButtons, recipeHeader, recipeImg , ingredientContainer, instructionContainer
+         )
 }
 
 

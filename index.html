@@ -22,7 +22,7 @@
         </div>
     </section>
     <section class="signup hidden">
-        
+
         <form class="signup-form">
             <h2 class="signup-header">Sign Up</h2>
             <label for="signup-name">Name</label>
@@ -61,9 +61,9 @@
     </section>
     <section class="search-page hidden">
         <div class="search-page-buttons">
-        <button class='log-out' id='log-out-search'>Log out</button>
-        <button class='profile-button'>Profile</button>
-    </div>
+            <button class='log-out' id='log-out-search'>Log out</button>
+            <button class='profile-button'>Profile</button>
+        </div>
         <form class="search-form">
             <label for="search-recipes">Search Recipes</label>
             <input type="text" id="search-recipes">
@@ -73,8 +73,10 @@
         </div>
     </section>
     <section class="profile-page hidden">
-        <button class='log-out'>Log out</button>
-        <button class='back-to-search'>Back to search</button>
+        <div class="profile-top-buttons">
+            <button class='log-out'>Log out</button>
+            <button class='back-to-search'>Back to search</button>
+        </div>
         <h1>profile</h1>
         <h2>Saved Recipes</h2>
         <div class="saved-results">
@@ -82,9 +84,11 @@
     </section>
     <section class="recipe-details hidden">
         <div class="result-card"></div>
+        <div class = 'more-buttons'>
         <button class='detail-buttons' id='back-to-results'>Back</button>
         <button class='detail-buttons' id='save-recipe'>Save Recipe</button>
         <button class='detail-buttons hidden' id='delete-recipe'>Remove Saved</button>
+    </div>
     </section>
     <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js "></script>
     <script src="main.js" async defer></script>

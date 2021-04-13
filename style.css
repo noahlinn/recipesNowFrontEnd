@@ -8,8 +8,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    height: 99%;
+    width: 99%;
 }
 html{
     width: 100%;
@@ -33,9 +33,7 @@ html{
     align-items: center;
 }
 
-.search-page-buttons{
-    align-content: space-between;
-}
+
 
 .signup-form{
     display: flex;
@@ -67,14 +65,21 @@ html{
 
 section{
     margin: 10% 10% 10% 10%;
-    background:rgba(0, 0, 0, 0.331);
-    height: 80%;
-    width: 80%;
+    background:rgba(255, 255, 255, 0.671);
+    min-height: 95%;
+    width: 95%;
     display: flex;
+    max-height: fit-content;;
+}
+
+.search-page-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #page1-header{
-    font-weight: ;
+    
     text-align: center;
     margin-top: 200px;
     font-size: 600%;
@@ -99,13 +104,17 @@ section{
     margin: 10px;
 }
 .recipe-card img{
-    width: 350px;
+    width: 100%;
 }
 
 .search-results{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.search-form label{
+    font-size: 100px;
 }
 
 .recipe-card{
@@ -119,8 +128,8 @@ section{
     padding: 5px;
     border: 2px solid white;
     box-sizing: border-box;
-    width: 18%;
-    height: 400px;
+    width: 16%;
+   
     background-color: rgba(255, 255, 255, 0.767); 
 }
 
@@ -130,3 +139,62 @@ section{
     -webkit-box-orient: vertical; 
     overflow: hidden;
 }
+
+.saved-results{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile-top-buttons{
+    width: ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.profile-page{
+    flex-direction: column;
+}
+
+.result-card h1{
+    font-size: 300%;
+    width: 100%;
+    text-align: center;
+}
+
+.result-card{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+.result-card img{
+    margin-top: -5%;
+    margin-left: 5%;
+    width: 45%;
+    align-self:flex-start;
+}
+
+.detail-buttons{
+    
+    height: 50px;
+}
+
+.more-buttons{
+    bottom: 0%;
+    height:5%
+}
+
+.ingredient-container{
+    margin-top: -5%;
+    margin-left: 5%;
+    width: 45%;
+    height: fit-content;
+}
+
+.instruction-container{
+    margin-top: -5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%
+}
+.recipe-details{}
