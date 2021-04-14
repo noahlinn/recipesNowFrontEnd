@@ -57,12 +57,14 @@ signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     signUp()
     clearResults(searchResults)
+    signUpForm.reset()
 })
 
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     login()
     clearResults(searchResults)
+    loginForm.reset()
 })
 
 saveButton.addEventListener('click', () => {
@@ -87,6 +89,7 @@ searchForm.addEventListener('submit', (e) => {
     const id = localStorage.getItem('userId')
     getRecipes(id, query, searchResults)
     clearResults(searchResults)
+    searchForm.reset()
 })
 
 backToResusltsButton.addEventListener('click', () => {
@@ -121,6 +124,7 @@ updateForm.addEventListener('submit', (e) => {
     let userId = localStorage.getItem('userId')
     updateDiet(userId)
     alert('Diet Changed')
+    updateForm.reset()
 })
 
 updateDiet = async (userId) => {
@@ -130,7 +134,7 @@ updateDiet = async (userId) => {
             diet: diet
         })
     } catch (error) {
-        
+        alert(error)
     }
 }
 
@@ -300,7 +304,7 @@ showSavedRecipe = async () => {
             displayRecipes(recipeId, results.data.title, results.data.image, savedResults, profilePage, resultCard)
         }  
     } catch (error) {
-        
+        alert(error)
     }
 }
 
