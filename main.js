@@ -1,3 +1,4 @@
+
 const loginOrSignUp = document.querySelector(".login-or-signup")
 const signUpButton = document.querySelector("#signup-button")
 const loginButton = document.querySelector("#login-button")
@@ -22,6 +23,9 @@ const deleteSave = document.querySelector('#delete-recipe')
 const backToResusltsButton = document.querySelector('#back-to-results')
 const saveButton = document.querySelector('#save-recipe')
 const moreButtons = document.querySelector('.more-buttons')
+const updateForm = document.querySelector('.update-form')
+const updateDietValue = document.querySelector('#update-diet')
+
 let recipeId = null
 let profile = false
 
@@ -29,7 +33,7 @@ let profile = false
 
 
 signUpButton.addEventListener('click', () => {
-    console.log('click')
+
     hideSections()
     removeHidden(signUpPage)
     addHidden(loginOrSignUp)
@@ -62,9 +66,9 @@ loginForm.addEventListener('submit', async (e) => {
 })
 
 saveButton.addEventListener('click', () => {
-    console.log('click')
+
     const userId = localStorage.getItem('userId')
-    console.log(userId, recipeId)
+
     saveRecipe(userId, recipeId)
 })
 
@@ -112,6 +116,25 @@ deleteSave.addEventListener('click', () => {
 })
 
 
+updateForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    let userId = localStorage.getItem('userId')
+    updateDiet(userId)
+    alert('Diet Changed')
+})
+
+updateDiet = async (userId) => {
+    try {
+        let diet = updateDietValue.value
+        const res = await axios.put(`http://localhost:3001/users/${userId}`, {
+            diet: diet
+        })
+    } catch (error) {
+        
+    }
+}
+
+
 
 getRecipes = async (id, query) => {
     try {
@@ -119,7 +142,6 @@ getRecipes = async (id, query) => {
             id: id,
             query: query
         })
-        console.log(res)
         let resultsArray = res.data.results
         if (resultsArray.length === 0) {
             alert("No results found")
@@ -149,7 +171,6 @@ displayRecipes = (id, name, img, div, page, page2) => {
     div.append(card)
     card.addEventListener('click', () => {
         recipeId = id
-        console.log(id)
         displaySingle(id, page)
         clearResults(page2)
     })
@@ -272,11 +293,9 @@ showSavedRecipe = async () => {
         
         let res = await axios.get(`http://localhost:3001/users/${userId}/savedRecipes`)
         let dataArr = res.data
-        console.log(res.data)
-       
+    
         for (let data of dataArr) {
             recipeId = data.recipeId
-            console.log(recipeId)
             let results = await axios.get(`http://localhost:3001/recipes/search/${recipeId}`)
             displayRecipes(recipeId, results.data.title, results.data.image, savedResults, profilePage, resultCard)
         }  

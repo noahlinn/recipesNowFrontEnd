@@ -69,6 +69,7 @@ section{
     width: 95%;
     display: flex;
     max-height: fit-content;;
+    padding: 50px
 }
 
 .search-page-buttons{
@@ -202,14 +203,23 @@ section{
     justify-content: space-between;
 }
 
-.profile-page label{
+.profile-page .poop{
     font-size: 75px;
     width: 100%;
     
     text-align: center;
 }
-.profile-page p{
+.saved-header{
     text-align: center;
+    font-size: 30px;
+}
+.update-page{
+    flex-direction: column;
+}
+.update-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hidden{

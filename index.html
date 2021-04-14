@@ -77,10 +77,26 @@
             <button class='log-out'>Log out</button>
             <button class='back-to-search'>Back to search</button>
         </div>
-        <label id = 'profile-header'>profile</label>
-        <p>Your Saved Recipes:</p>
+        <label id = 'profile-header' class = 'poop'>profile</label>
+                <form class="update-form">
+        
+            <label for="update-diet" class = 'update-header'>Update Diet?</label>
+            <select id="update-diet" name="diet">
+                <option value="">Omnivore</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Ketogenic">Keto</option>
+                <option value="Pescetarian">Pescetarian</option>
+                <option value="Paleo">Paleo</option>
+                <option value="Whole30">Whole30</option>
+            </select>
+            <input type="submit" value="Update Information!">
+        </form>
+        <p class = 'saved-header'>Your Saved Recipes:</p>
         <div class="saved-results">
+            
         </div>
+
     </section>
     <section class="recipe-details hidden">
         <div class = 'more-buttons'>
@@ -91,6 +107,7 @@
         <div class="result-card"></div>
 
     </section>
+ 
     <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js "></script>
     <script src="main.js" async defer></script>
 </body>
